@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>chat 24</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .chat-container {
+      width: 300px;
+      background: #fff;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      height: 400px;
+    }
+
+    .chat-header {
+      background: #4CAF50;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .message-area {
+      flex-grow: 1;
+      padding: 10px;
+      overflow-y: auto;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .message {
+      margin: 8px 0;
+    }
+
+    .message.sent {
+      text-align: right;
+    }
+
+    .message p {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 10px;
+      background: #e4e6eb;
+    }
+
+    .message.sent p {
+      background: #4CAF50;
+      color: white;
+    }
+
+    .input-area {
+      display: flex;
+      padding: 8px;
+    }
+
+    .input-area input {
+      flex-grow: 1;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+    }
+
+    .input-area button {
+      padding: 8px 12px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="chat-container">
+    <div class="chat-header">
+      Chat
+    </div>
+    <div class="message-area" id="messageArea">
+      <div class="message received">
+        <p>Hello!</p>
+      </div>
+    </div>
+    <div class="input-area">
+      <input type="text" id="messageInput" placeholder="Type your message...">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script>
+    function sendMessage() {
+      const messageInput = document.getElementById('messageInput');
+      const messageArea = document.getElementById('messageArea');
+      const messageText = messageInput.value.trim();
+
+      if (messageText !== '') {
+        const newMessage = document.createElement('div');
+        newMessage.classList.add('message', 'sent');
+        newMessage.innerHTML = `<p>${messageText}</p>`;
+
+        messageArea.appendChild(newMessage);
+        messageArea.scrollTop = messageArea.scrollHeight;
+        messageInput.value = '';
+      }
+    }
+  </script>
+
+</body>
+</html>
