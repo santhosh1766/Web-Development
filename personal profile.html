@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajith Kumar | Profile</title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            font-family: Arial, Helvetica, sans-serif;
+            background:#eef2f6;
+        }
+
+        .profile{
+            width:800px;
+            margin:60px auto;
+            background:#ffffff;
+            border-radius:10px;
+            box-shadow:0 8px 20px rgba(0,0,0,0.15);
+            overflow:hidden;
+        }
+
+        .header{
+            background:#222;
+            color:#fff;
+            text-align:center;
+            padding:35px 20px;
+        } 
+
+        .header h1{
+            margin:0;
+            font-size:32px;
+        }
+
+        .header p{
+            margin-top:8px;
+            font-size:15px;
+            opacity:0.8;
+        }
+
+        .tabs{
+            display:flex;
+            background:#f1f1f1;
+        }
+
+        .tabs input{
+            display:none;
+        }
+
+        .tabs label{
+            flex:1;
+            text-align:center;
+            padding:14px;
+            cursor:pointer;
+            font-weight:bold;
+            color:#555;
+            transition:0.3s;
+        }
+
+        .tabs label:hover{
+            background:#ddd;
+        }
+
+        .tabs input:checked + label{
+            background:#fff;
+            color:#000;
+            border-bottom:3px solid #000;
+        }
+
+        .content{
+            padding:30px 40px;
+        }
+
+        .tab-content{
+            display:none;
+        }
+
+        #about:checked ~ .content #about-content,
+        #career:checked ~ .content #career-content,
+        #contact:checked ~ .content #contact-content{
+            display:block;
+        }
+
+        h2{
+            margin-top:0;
+            color:#222;
+        }
+
+        ul{
+            padding-left:20px;
+            line-height:1.7;
+        }
+
+        .contact p{
+            margin:8px 0;
+        }
+
+        @media(max-width:850px){
+            .profile{
+                width:90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="profile">
+
+    <div class="header">
+        <h1>Ajith Kumar</h1>
+        <p>Indian Actor | Racer | Role Model</p>
+    </div>
+
+    <div class="tabs">
+        <input type="radio" name="tab" id="about" checked>
+        <label for="about">About</label>
+
+        <input type="radio" name="tab" id="career">
+        <label for="career">Career</label>
+
+        <input type="radio" name="tab" id="contact">
+        <label for="contact">Contact</label>
+
+        <div class="content">
+
+            <!-- About -->
+            <div id="about-content" class="tab-content">
+                <h2>About</h2>
+                <p>
+                    Ajith Kumar is a leading Indian film actor in Tamil cinema.
+                    He is known for his simplicity, discipline, and dedication to his craft.
+                    Apart from acting, he has a strong passion for motorsports and aviation.
+                </p>
+            </div>
+
+            <div id="career-content" class="tab-content">
+                <h2>Career Highlights</h2>
+                <ul>
+                    <li>Started acting career in the early 1990s</li>
+                    <li>Popular films include <b>Mankatha, Billa, Vedalam, Viswasam</b></li>
+                    <li>Won multiple Filmfare & State Awards</li>
+                    <li>Known for avoiding media publicity</li>
+                </ul>
+            </div>
+
+            <div id="contact-content" class="tab-content contact">
+                <h2>Contact</h2>
+                <p><b>Profession:</b> Film Actor</p>
+                <p><b>Industry:</b> Tamil Cinema</p>
+                <p><b>Nick Name:</b> Thala</p>
+                <p><b>Public Presence:</b> Private</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>                                                                                                 
+                        
